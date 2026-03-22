@@ -1,76 +1,78 @@
 // Portfolio Lightbox/Modal Functionality
-const modal = document.getElementById('imageModal');
-const modalImage = document.getElementById('modalImage');
-const modalCaption = document.getElementById('modalCaption');
-const closeModal = document.querySelector('.close-modal');
-const prevBtn = document.querySelector('.prev-modal');
-const nextBtn = document.querySelector('.next-modal');
-const portfolioItems = document.querySelectorAll('.portfolio-item');
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const closeModal = document.querySelector('.close-modal');
+    const prevBtn = document.querySelector('.prev-modal');
+    const nextBtn = document.querySelector('.next-modal');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
 
-let currentImageIndex = 0;
-const images = [];
+    let currentImageIndex = 0;
+    const images = [];
 
-// Populate images array from portfolio items
-portfolioItems.forEach((item) => {
-    const imagePath = item.getAttribute('data-image');
-    const title = item.getAttribute('data-title');
-    if (imagePath) {
-        images.push({
-            src: imagePath,
-            title: title
-        });
-    }
-});
-
-// Open modal when portfolio item is clicked
-portfolioItems.forEach((item, index) => {
-    item.addEventListener('click', () => {
-        currentImageIndex = index;
-        openModal(index);
+    // Populate images array from portfolio items
+    portfolioItems.forEach((item) => {
+        const imagePath = item.getAttribute('data-image');
+        const title = item.getAttribute('data-title');
+        if (imagePath) {
+            images.push({
+                src: imagePath,
+                title: title
+            });
+        }
     });
-});
 
-function openModal(index) {
-    if (images[index]) {
-        modalImage.src = images[index].src;
-        modalCaption.textContent = images[index].title;
-        modal.classList.add('show');
+    // Open modal when portfolio item is clicked
+    portfolioItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            currentImageIndex = index;
+            openModal(index);
+        });
+    });
+
+    function openModal(index) {
+        if (images[index]) {
+            modalImage.src = images[index].src;
+            modalCaption.textContent = images[index].title;
+            modal.classList.add('show');
+        }
     }
-}
 
-function closeImageModal() {
-    modal.classList.remove('show');
-}
-
-function showPrevImage() {
-    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-    openModal(currentImageIndex);
-}
-
-function showNextImage() {
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-    openModal(currentImageIndex);
-}
-
-// Event listeners for modal controls
-closeModal.addEventListener('click', closeImageModal);
-prevBtn.addEventListener('click', showPrevImage);
-nextBtn.addEventListener('click', showNextImage);
-
-// Close modal when clicking outside the image
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        closeImageModal();
+    function closeImageModal() {
+        modal.classList.remove('show');
     }
-});
 
-// Keyboard navigation
-document.addEventListener('keydown', (e) => {
-    if (modal.classList.contains('show')) {
-        if (e.key === 'ArrowLeft') showPrevImage();
-        if (e.key === 'ArrowRight') showNextImage();
-        if (e.key === 'Escape') closeImageModal();
+    function showPrevImage() {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        openModal(currentImageIndex);
     }
+
+    function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        openModal(currentImageIndex);
+    }
+
+    // Event listeners for modal controls
+    closeModal.addEventListener('click', closeImageModal);
+    prevBtn.addEventListener('click', showPrevImage);
+    nextBtn.addEventListener('click', showNextImage);
+
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeImageModal();
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (modal.classList.contains('show')) {
+            if (e.key === 'ArrowLeft') showPrevImage();
+            if (e.key === 'ArrowRight') showNextImage();
+            if (e.key === 'Escape') closeImageModal();
+        }
+    });
 });
 
 /* ==================== MOBILE MENU ==================== */
