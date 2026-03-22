@@ -1,78 +1,83 @@
 // Portfolio Lightbox/Modal Functionality
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('Script loaded - initializing lightbox');
+    
     const modal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
-    const modalCaption = document.getElementById('modalCaption');
-    const closeModal = document.querySelector('.close-modal');
-    const prevBtn = document.querySelector('.prev-modal');
-    const nextBtn = document.querySelector('.next-modal');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    console.log('Modal found:', !!modal);
+    console.log('Portfolio items found:', portfolioItems.length);
+    
+    if (!modal) {
+        console.error('Modal element not found!');
+        return;
+    }
 
-    let currentImageIndex = 0;
-    const images = [];
-
-    // Populate images array from portfolio items
-    portfolioItems.forEach((item) => {
-        const imagePath = item.getAttribute('data-image');
-        const title = item.getAttribute('data-title');
-        if (imagePath) {
-            images.push({
-                src: imagePath,
-                title: title
-            });
-        }
-    });
-
-    // Open modal when portfolio item is clicked
+    // Click handler for each portfolio item
     portfolioItems.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            currentImageIndex = index;
-            openModal(index);
+        item.style.cursor = 'pointer';
+        
+        item.addEventListener('click', function(e) {
+            console.log('Portfolio item clicked:', index);
+            e.stopPropagation();
+            
+            const imagePath = this.getAttribute('data-image');
+            const title = this.getAttribute('data-title');
+            
+            console.log('Image path:', imagePath);
+            console.log('Title:', title);
+            
+            if (imagePath) {
+                document.getElementById('modalImage').src = imagePath;
+                document.getElementById('modalCaption').textContent = title || '';
+                modal.classList.add('show');
+                console.log('Modal shown');
+            }
         });
     });
 
-    function openModal(index) {
-        if (images[index]) {
-            modalImage.src = images[index].src;
-            modalCaption.textContent = images[index].title;
-            modal.classList.add('show');
-        }
+    // Close button
+    const closeBtn = document.querySelector('.close-modal');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            console.log('Close button clicked');
+            modal.classList.remove('show');
+        });
     }
 
-    function closeImageModal() {
-        modal.classList.remove('show');
-    }
-
-    function showPrevImage() {
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        openModal(currentImageIndex);
-    }
-
-    function showNextImage() {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        openModal(currentImageIndex);
-    }
-
-    // Event listeners for modal controls
-    closeModal.addEventListener('click', closeImageModal);
-    prevBtn.addEventListener('click', showPrevImage);
-    nextBtn.addEventListener('click', showNextImage);
-
-    // Close modal when clicking outside the image
+    // Click outside to close
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
-            closeImageModal();
+            console.log('Outside click detected');
+            modal.classList.remove('show');
         }
     });
 
-    // Keyboard navigation
+    // Keyboard close
     document.addEventListener('keydown', (e) => {
-        if (modal.classList.contains('show')) {
-            if (e.key === 'ArrowLeft') showPrevImage();
-            if (e.key === 'ArrowRight') showNextImage();
-            if (e.key === 'Escape') closeImageModal();
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            console.log('Escape key pressed');
+            modal.classList.remove('show');
         }
     });
+
+    // Prev/Next buttons
+    const prevBtn = document.querySelector('.prev-modal');
+    const nextBtn = document.querySelector('.next-modal');
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            console.log('Prev clicked');
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            console.log('Next clicked');
+        });
+    }
 });
 
 /* ==================== MOBILE MENU ==================== */

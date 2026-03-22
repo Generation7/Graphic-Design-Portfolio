@@ -687,10 +687,6 @@ body {
     }
 }
 
-.image-modal.show {
-    display: flex;
-}
-
 .close-modal {
     position: absolute;
     top: 30px;
