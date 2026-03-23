@@ -236,9 +236,10 @@ a {
 }
 
 .hero-card-main img {
-    object-fit: contain;
-    object-position: center top;
-    padding-top: 0.5rem;
+    object-fit: cover;
+    object-position: center 15%;
+    transform: scale(0.82);
+    transform-origin: center top;
 }
 
 .hero-card-small {
