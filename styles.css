@@ -232,6 +232,13 @@ a {
 
 .hero-card-main {
     inset: 30px 50px 30px 60px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+}
+
+.hero-card-main img {
+    object-fit: contain;
+    object-position: center top;
+    padding-top: 0.5rem;
 }
 
 .hero-card-small {
