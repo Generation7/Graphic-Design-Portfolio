@@ -3,77 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graphic Designer Portfolio</title>
+    <meta name="description" content="Eugene Tiah graphic design portfolio featuring flyers, social media designs, brand promotions, and marketing visuals.">
+    <title>Eugene Tiah | Graphic Design Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">DESIGN</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="#home" class="brand">Eugene<span>Designs</span></a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Professional Flier Design</h1>
-            <p>Eye-catching fliers that get noticed</p>
-            <a href="portfolio.html" class="cta-button">View My Fliers</a>
-        </div>
-        <div class="hero-background">
-            <!-- Gradient background -->
-        </div>
-    </section>
-
-    <!-- Featured Work Section -->
-    <section class="featured">
-        <div class="container">
-            <h2>Featured Fliers</h2>
-            <div class="featured-grid">
-                <div class="featured-card">
-                    <div class="featured-image" style="background: url('Chrissy\'s Cuisine.png') center/cover;"></div>
-                    <h3>Restaurant Promotion</h3>
-                    <p>Chrissy's Cuisine Flier</p>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <p class="eyebrow">Graphic Designer • Flyer Specialist • Brand Visual Creator</p>
+                <h1>I design bold visuals that help brands get noticed.</h1>
+                <p class="hero-description">
+                    From promotional flyers and campaign graphics to social media creatives and business adverts,
+                    I create designs that are clean, strategic, and visually memorable.
+                </p>
+                <div class="hero-actions">
+                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Hire Me</a>
                 </div>
-                <div class="featured-card">
-                    <div class="featured-image" style="background: url('Valentine.png') center/cover;"></div>
-                    <h3>Event Marketing</h3>
-                    <p>Valentine's Campaign</p>
-                </div>
-                <div class="featured-card">
-                    <div class="featured-image" style="background: url('Rental.png') center/cover;"></div>
-                    <h3>Real Estate</h3>
-                    <p>Property Rental Flier</p>
+                <div class="stats">
+                    <div>
+                        <strong>18+</strong>
+                        <span>Design Projects</span>
+                    </div>
+                    <div>
+                        <strong>5+</strong>
+                        <span>Industries Served</span>
+                    </div>
+                    <div>
+                        <strong>100%</strong>
+                        <span>Creative Focus</span>
+                    </div>
                 </div>
             </div>
-            <div class="view-more">
-                <a href="portfolio.html" class="secondary-button">View All Fliers</a>
+            <div class="hero-visual">
+                <div class="hero-card hero-card-main">
+                    <img src="Eugene.png" alt="Portrait of Eugene Tiah">
+                </div>
+                <div class="hero-card hero-card-small top-card">
+                    <img src="Valentine 2.png" alt="Valentine flyer design preview">
+                </div>
+                <div class="hero-card hero-card-small bottom-card">
+                    <img src="Chrissy's Cuisine.png" alt="Restaurant flyer design preview">
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2026 Eugene Tiah. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://instagram.com/rantsonbusinesses" class="social-icon">Instagram</a>
-                <a href="https://linkedin.com/in/agbezuge-tiah" class="social-icon">LinkedIn</a>
+        <section id="about" class="section section-dark">
+            <div class="section-heading">
+                <p class="eyebrow">About Me</p>
+                <h2>Creative design with purpose and personality</h2>
             </div>
+            <div class="about-grid">
+                <div>
+                    <p>
+                        I'm Eugene Tiah, a graphic designer focused on creating promotional visuals that blend
+                        strong messaging, bold layout, and attractive branding. My work helps businesses, events,
+                        and personal brands communicate with clarity and style.
+                    </p>
+                    <p>
+                        I specialize in marketing flyers, campaign designs, social media posts, and branded
+                        graphics that instantly capture attention and encourage engagement.
+                    </p>
+                </div>
+                <div class="about-cards">
+                    <article class="info-card">
+                        <h3>Design Strengths</h3>
+                        <p>Typography, color balance, visual hierarchy, brand alignment, and conversion-focused layout.</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>Tools I Use</h3>
+                        <p>Adobe Photoshop, Illustrator, Canva Pro, Figma, and other digital design tools.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">Services</p>
+                <h2>What I can design for you</h2>
+            </div>
+            <div class="services-grid">
+                <article class="service-card">
+                    <h3>Flyer Design</h3>
+                    <p>Promotional flyers for events, restaurants, real estate, education, and business campaigns.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Social Media Graphics</h3>
+                    <p>Scroll-stopping content for Instagram, Facebook, LinkedIn, and digital promotions.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Brand Promotion Creatives</h3>
+                    <p>Visuals tailored to your identity, products, audience, and campaign goals.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Marketing Campaign Assets</h3>
+                    <p>Design support for launches, announcements, seasonal promotions, and awareness campaigns.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section section-dark">
+            <div class="section-heading">
+                <p class="eyebrow">Portfolio</p>
+                <h2>Selected design projects</h2>
+            </div>
+
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="food">Food</button>
+                <button class="filter-btn" data-filter="real-estate">Real Estate</button>
+                <button class="filter-btn" data-filter="event">Events</button>
+                <button class="filter-btn" data-filter="business">Business</button>
+                <button class="filter-btn" data-filter="education">Education</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <article class="portfolio-item" data-category="food">
+                    <img src="Chrissy's Cuisine.png" alt="Chrissy's Cuisine flyer">
+                    <div class="portfolio-copy"><h3>Chrissy's Cuisine</h3><p>Restaurant promotion</p></div>
+                </article>
+                <article class="portfolio-item" data-category="food">
+                    <img src="Chrissy's Cuisine.png" alt="Chrissy's Cuisine flyer variation">
+                    <div class="portfolio-copy"><h3>Chrissy's Cuisine II</h3><p>Food campaign design</p></div>
+                </article>
+                <article class="portfolio-item" data-category="event">
+                    <img src="Valentine 2.png" alt="Valentine campaign design">
+                    <div class="portfolio-copy"><h3>Valentine Campaign</h3><p>Romantic event promotion</p></div>
+                </article>
+                <article class="portfolio-item" data-category="event">
+                    <img src="Valentine 2.png" alt="Valentine campaign second design">
+                    <div class="portfolio-copy"><h3>Valentine Special</h3><p>Seasonal campaign graphic</p></div>
+                </article>
+                <article class="portfolio-item" data-category="real-estate">
+                    <img src="Rental.png" alt="Rental flyer design">
+                    <div class="portfolio-copy"><h3>Rental Listing</h3><p>Real estate promotion</p></div>
+                </article>
+                <article class="portfolio-item" data-category="real-estate">
+                    <img src="Rental new.png" alt="Updated rental promotion design">
+                    <div class="portfolio-copy"><h3>Rental Update</h3><p>Property marketing visual</p></div>
+                </article>
+                <article class="portfolio-item" data-category="real-estate">
+                    <img src="Rental 2.png" alt="Second rental flyer design">
+                    <div class="portfolio-copy"><h3>Property Promo</h3><p>Housing advert design</p></div>
+                </article>
+                <article class="portfolio-item" data-category="business">
+                    <img src="Bitcoin.png" alt="Bitcoin promotional graphic">
+                    <div class="portfolio-copy"><h3>Bitcoin Promo</h3><p>Financial marketing graphic</p></div>
+                </article>
+                <article class="portfolio-item" data-category="business">
+                    <img src="Lending.png" alt="Lending campaign design">
+                    <div class="portfolio-copy"><h3>Lending Campaign</h3><p>Business finance promotion</p></div>
+                </article>
+                <article class="portfolio-item" data-category="business">
+                    <img src="PayPal.png" alt="PayPal themed campaign design">
+                    <div class="portfolio-copy"><h3>PayPal Campaign</h3><p>Payment service creative</p></div>
+                </article>
+                <article class="portfolio-item" data-category="business">
+                    <img src="Starlink.png" alt="Starlink promo design">
+                    <div class="portfolio-copy"><h3>Starlink Promo</h3><p>Tech service advert</p></div>
+                </article>
+                <article class="portfolio-item" data-category="education">
+                    <img src="Gh Truths1.png" alt="GH Truths flyer design one">
+                    <div class="portfolio-copy"><h3>GH Truths I</h3><p>Educational awareness graphic</p></div>
+                </article>
+                <article class="portfolio-item" data-category="education">
+                    <img src="Gh Truths2.png" alt="GH Truths flyer design two">
+                    <div class="portfolio-copy"><h3>GH Truths II</h3><p>Informative campaign visual</p></div>
+                </article>
+                <article class="portfolio-item" data-category="education">
+                    <img src="Gh Truths3.png" alt="GH Truths flyer design three">
+                    <div class="portfolio-copy"><h3>GH Truths III</h3><p>Educational design series</p></div>
+                </article>
+                <article class="portfolio-item" data-category="business">
+                    <img src="MTN post.png" alt="MTN social media design">
+                    <div class="portfolio-copy"><h3>MTN Post</h3><p>Social media branded post</p></div>
+                </article>
+                <article class="portfolio-item" data-category="business">
+                    <img src="UG.png" alt="UG promotional design">
+                    <div class="portfolio-copy"><h3>UG Campaign</h3><p>Institutional brand promotion</p></div>
+                </article>
+                <article class="portfolio-item" data-category="food">
+                    <img src="CAKE.png" alt="Cake promotion design">
+                    <div class="portfolio-copy"><h3>Cake Design</h3><p>Food and product promotion</p></div>
+                </article>
+                <article class="portfolio-item" data-category="event">
+                    <img src="January.png" alt="January campaign design">
+                    <div class="portfolio-copy"><h3>January Campaign</h3><p>Seasonal promotion</p></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section testimonials">
+            <div class="section-heading">
+                <p class="eyebrow">Why Clients Choose Me</p>
+                <h2>Design that combines beauty and marketing impact</h2>
+            </div>
+            <div class="services-grid">
+                <article class="service-card">
+                    <h3>Attention-Grabbing</h3>
+                    <p>Each design is made to stand out quickly and communicate the main message instantly.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Brand-Conscious</h3>
+                    <p>I create visuals that match your voice, target audience, and brand personality.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Professional Finish</h3>
+                    <p>You get polished visuals suitable for print, digital campaigns, and social platforms.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="section section-dark">
+            <div class="section-heading">
+                <p class="eyebrow">Contact</p>
+                <h2>Let's create something amazing</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Get in Touch</h3>
+                    <p>If you need a flyer, promo graphic, campaign visual, or branded design, I'm ready to help.</p>
+                    <ul class="contact-list">
+                        <li><strong>Email:</strong> <a href="mailto:agbezugeeugene@gmail.com">agbezugeeugene@gmail.com</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:+233536349690">+233 53 634 9690</a></li>
+                        <li><strong>Location:</strong> Oyarifa, Accra, Ghana</li>
+                    </ul>
+                </div>
+                <form class="contact-card contact-form" id="contactForm">
+                    <h3>Send a Project Inquiry</h3>
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Your name" required>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="Your email" required>
+                    <label for="subject">Subject</label>
+                    <input id="subject" name="subject" type="text" placeholder="What do you need designed?" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell me about your project" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Close preview">&times;</button>
+        <img class="lightbox-image" src="" alt="Expanded portfolio preview">
+        <p class="lightbox-caption"></p>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Eugene Tiah. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://instagram.com/rantsonbusinesses" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://linkedin.com/in/agbezuge-tiah" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
     </footer>
 
